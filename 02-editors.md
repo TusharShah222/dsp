@@ -60,7 +60,7 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I enjoy using Sublime and Atom
 
 --
 
@@ -68,6 +68,9 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I havent had much exposure to gaphical editors, but the editor that really stood out to me after doing some research is Rodeo.  Rodeo is an IDE that's built expressly for doing data science in Python.  Its like a lightweight alternative to iPython Notebook.  
+Includes a terminal with autocomplete
+A text editor
+ability to see plots
 
  
