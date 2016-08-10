@@ -1,9 +1,9 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 
-
+"""
 def donuts(count):
-    """
+    
     Given an int count of a number of donuts, return a string of the
     form 'Number of donuts: <count>', where <count> is the number
     passed in. However, if the count is 10 or more, then use the word
@@ -17,12 +17,23 @@ def donuts(count):
     'Number of donuts: many'
     >>> donuts(99)
     'Number of donuts: many'
-    """
+   
     raise NotImplementedError
 
+"""
 
+def donuts(count):
+    if count < 10:
+        numofdonuts = count
+    else:
+        numofdonuts = 'many'
+    return 'Number of donuts: ' + str(numofdonuts)
+
+print donuts(15)
+
+"""
 def both_ends(s):
-    """
+   
     Given a string s, return a string made of the first 2 and the last
     2 chars of the original string, so 'spring' yields 'spng'.
     However, if the string length is less than 2, return instead the
@@ -36,12 +47,20 @@ def both_ends(s):
     ''
     >>> both_ends('xyz')
     'xyyz'
-    """
+   
     raise NotImplementedError
+"""
+def both_ends(s):
+  if len(s) < 2:
+    return ' '
+  else:
+      return s[0:2] + s[-2:]
 
+print both_ends('go')
 
+"""
 def fix_start(s):
-    """
+    
     Given a string s, return a string where all occurences of its
     first char have been changed to '*', except do not change the
     first char itself. e.g. 'babble' yields 'ba**le' Assume that the
@@ -55,12 +74,20 @@ def fix_start(s):
     'goo*le'
     >>> fix_start('donut')
     'donut'
-    """
+   
     raise NotImplementedError
+"""
+def replace(s):
+    first_char = s[0]
+    string1 = s[1:].replace(first_char, "*")
+    print first_char + string1
+
+replace('IbeIntheClubSIppInOnTheBub')
 
 
+"""
 def mix_up(a, b):
-    """
+    
     Given strings a and b, return a single string with a and b
     separated by a space '<a> <b>', except swap the first 2 chars of
     each string. Assume a and b are length 2 or more.
@@ -73,12 +100,22 @@ def mix_up(a, b):
     'spash gnort'
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
-    """
+   
     raise NotImplementedError
+"""
 
+def mix_up(a, b):
+  a1 = b[:2] + a[2:]
+  b1 = a[:2] + b[2:]
+
+  return a1 + ' ' + b1
+
+print mix_up("bow", "wow")
+
+"""
 
 def verbing(s):
-    """
+    
     Given a string, if its length is at least 3, add 'ing' to its end.
     Unless it already ends in 'ing', in which case add 'ly' instead.
     If the string length is less than 3, leave it unchanged. Return
@@ -90,12 +127,24 @@ def verbing(s):
     'swimingly'
     >>> verbing('do')
     'do'
-    """
+    
     raise NotImplementedError
+"""
+
+defdef verbing(s):
+    if len(s) >= 3 and s[-3:] == "ing":
+        return(s)+"ly"
+    else:
+        return(s)+"ing"
+
+print verbing("swimming")
 
 
-def not_bad(s):
-    """
+
+"""
+
+ not_bad(s):
+    
     Given a string, find the first appearance of the substring 'not'
     and 'bad'. If the 'bad' follows the 'not', replace the whole
     'not'...'bad' substring with 'good'. Return the resulting string.
@@ -110,12 +159,28 @@ def not_bad(s):
     'This tea is not hot'
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
-    """
+   
     raise NotImplementedError
+"""
+
+def not_bad(s):
+  notindex = s.find('not')
+  if notindex != -1:
+    if s.find('bad') != -1:
+      badindex = s.find('bad') +3
+      if notindex < badindex:
+        removetext = s[notindex:badindex]
+        return s.replace(removetext, 'good')
+  return s
+
+print not_bad("It's not so bad to be bling blingin in city")
 
 
+
+
+"""
 def front_back(a, b):
-    """
+    
     Consider dividing a string into two halves. If the length is even,
     the front and back halves are the same length. If the length is
     odd, we'll say that the extra char goes in the front half. e.g.
@@ -129,5 +194,30 @@ def front_back(a, b):
     'abcxydez'
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
-    """
+    
     raise NotImplementedError
+
+"""
+
+def front_back(a, b):
+  alength = len(a)
+  blength = len(b)
+
+  if alength % 2 == 0:
+    aindex = alength // 2
+  else:
+    aindex = (alength // 2) + 1
+
+  if blength % 2 == 0:
+    bindex = blength // 2
+  else:
+    bindex = (blength // 2) + 1
+
+  afront = a[0:aindex]
+  aback = a[aindex:]
+
+  bfront = b[0:bindex]
+  bback = b[bindex:]
+
+  return afront + bfront + aback + bback
+
