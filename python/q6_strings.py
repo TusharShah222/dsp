@@ -131,7 +131,7 @@ def verbing(s):
     raise NotImplementedError
 """
 
-defdef verbing(s):
+def verbing(s):
     if len(s) >= 3 and s[-3:] == "ing":
         return(s)+"ly"
     else:
