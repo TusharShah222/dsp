@@ -26,8 +26,7 @@ def match_ends(words):
     return word_count,results
 
 word_list=["aba","wow", "xyz", "aa", "bbb"]
-matched_words=match_ends(word_list)
-print matched_words
+print match_ends[word_list]
 
 
 
