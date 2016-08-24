@@ -19,22 +19,93 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
->> REPLACE THIS WITH YOUR RESPONSE
+import pandas as pd
+import re
+
+df = pd.read_csv("faculty.csv")
+
+
+degr = df[" degree"]
+
+deg=degr.replace('\.','',regex=True).astype("string")
+#dfz=degr.replace('\*','',regex=True).astype(float)
+
+#breakout = deg.groupby('a').count()
+
+#Nodecimals = degr[' degree'].replace(regex=True,inplace=True,to_replace=r'\D',value=r'')
+
+
+
+
+#print deg.count(sort)
+print deg.value_counts(sort = True)
+
 
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
->> REPLACE THIS WITH YOUR RESPONSE
+import pandas as pd
+import re
+
+df = pd.read_csv("faculty.csv")
+
+
+#degr = df[" degree"]
+
+#deg=degr.replace('\.','',regex=True).astype("string")
+
+
+#print deg.count(sort)
+#print deg.value_counts(sort = True)
+
+#Titles
+tits = df[' title']
+
+print tits.value_counts(sort = True)
+
 
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
 
->> REPLACE THIS WITH YOUR RESPONSE
+import pandas as pd
+import re
+
+df = pd.read_csv("faculty.csv")
+
+
+#degr = df[" degree"]
+
+#deg=degr.replace('\.','',regex=True).astype("string")
+
+
+#print deg.count(sort)
+#print deg.value_counts(sort = True)
+
+#Titles
+tits = df[' email']
+
+print tits.value_counts(sort = True)
 
 
 ####Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
->> REPLACE THIS WITH YOUR RESPONSE
+import pandas as pd
+import re
+
+df = pd.read_csv("faculty.csv")
+emailz = list(df[" email"])
+
+dom = emailz
+
+
+print dom
+
+
+
+
+domain = re.search("@[\w.]+", emailz)
+#print domain.group(" email")
+print emailz.value_counts(sort = True)
 
 Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
@@ -55,6 +126,34 @@ warren@upenn.edu
 bryanma@upenn.edu
 ```
 
+import pandas as pd
+import re
+
+
+df = pd.read_csv("faculty.csv")
+
+s = df
+snail = df[" email"]
+#print snail[0]
+
+
+
+snail_d = re.search("@[\w.]+", snail[0])
+
+#snail_d.group()
+print snail 
+#domain = re.search("@*", "snail")
+#print df
+#domain = re.search('@', df, 1)
+#print df[" email"]
+#snail = df[" email"]
+
+#print snail_d
+print snail_d.group(0)
+
+
+
+
 ---
 
 ### Part III - Dictionary
@@ -66,7 +165,7 @@ faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['P
 ```
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+
 
 ####Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
 
