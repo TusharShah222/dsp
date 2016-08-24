@@ -1,0 +1,17 @@
+
+import pandas as pd
+import re
+
+df = pd.read_csv("faculty.csv")
+
+
+#degr = df[" degree"]
+
+#deg=degr.replace('\.','',regex=True).astype("string")
+
+
+#print deg.count(sort)
+#print deg.value_counts(sort = True)
+
+#Titles
+tits = df[' email'] >> advanced_python_csv.py
