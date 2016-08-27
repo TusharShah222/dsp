@@ -179,7 +179,7 @@ w = np.matrix("1; 8; 0; 5")
 alpha = int(6)
 
 print b * b * b * b
-
+#print np.power(a, 4)
 
 3.9)AA^T
 import numpy as np
