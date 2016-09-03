@@ -165,6 +165,18 @@ faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['P
 ```
 Print the first 3 key and value pairs of the dictionary:
 
+faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu']],
+              'Li': [['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'], ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'], ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']]}
+
+
+
+for i in faculty_dict:
+    print i, faculty_dict[i]
+
+
+
+
+
 
 
 ####Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
@@ -175,9 +187,48 @@ professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn
 
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+
+
+professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn.edu'],
+                  ('Jonas', 'Ellenberg'): ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu'],
+                  ('Yimei', 'Li'): ['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'],
+                  ('Mingyao', 'Li'): ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'],
+                  ('Hongzhe', 'Li'): ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']};
+
+
+
+print professoror_dict
+
 
 ####Q8.  It looks like the current dictionary is printing by first name.  Print out the dictionary key value pairs based on alphabetical orders of the last name of the professors
+
+import pprint
+from collections import OrderedDict
+
+professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn.edu'],
+                  ('Jonas', 'Ellenberg'): ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu'],
+                  ('Yimei', 'Li'): ['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'],
+                  ('Mingyao', 'Li'): ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'],
+                  ('Hongzhe', 'Li'): ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']};
+
+
+#Sort using lambdas
+print "******"
+print "*********** SORTING USING LASTNAME*************"
+print "******"
+sort_by_lastname = sorted(professor_dict.items(), key=lambda item: item[0][1])
+pp.pprint(sort_by_lastname)
+
+#Preserve order and "dictionize"
+print "******"
+print "*********** SORTING THAN DICT USING LASTNAME*************"
+print "******"
+dict_by_lastname = OrderedDict(sorted(professor_dict.items(), key=lambda item: item[0][1]))
+pp.pprint(dict_by_lastname)
+
+
+
+
 
 >> REPLACE THIS WITH YOUR RESPONSE
 
