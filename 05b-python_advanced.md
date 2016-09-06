@@ -29,6 +29,7 @@ degr = df[" degree"]
 deg=degr.replace('\.','',regex=True).astype("string")
 
 """
+
 dfz=degr.replace('\*','',regex=True).astype(float)
 
 breakout = deg.groupby('a').count()
@@ -37,8 +38,11 @@ Nodecimals = degr[' degree'].replace(regex=True,inplace=True,to_replace=r'\D',va
 
 """
 
+"""
 
-####print deg.count(sort)
+print deg.count(sort)
+
+"""
 print deg.value_counts(sort = True)
 
 
