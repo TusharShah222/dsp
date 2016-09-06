@@ -24,20 +24,21 @@ import re
 
 df = pd.read_csv("faculty.csv")
 
-
 degr = df[" degree"]
 
 deg=degr.replace('\.','',regex=True).astype("string")
-#dfz=degr.replace('\*','',regex=True).astype(float)
 
-#breakout = deg.groupby('a').count()
+"""
+dfz=degr.replace('\*','',regex=True).astype(float)
 
-#Nodecimals = degr[' degree'].replace(regex=True,inplace=True,to_replace=r'\D',value=r'')
+breakout = deg.groupby('a').count()
+
+Nodecimals = degr[' degree'].replace(regex=True,inplace=True,to_replace=r'\D',value=r'')
+
+"""
 
 
-
-
-#print deg.count(sort)
+####print deg.count(sort)
 print deg.value_counts(sort = True)
 
 
