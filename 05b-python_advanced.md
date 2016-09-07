@@ -71,7 +71,7 @@ print tits.value_counts(sort = True)
 
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
-
+>>
 import pandas as pd
 import re
 
@@ -90,7 +90,7 @@ df = pd.read_csv("faculty.csv")
 tits = df[' email']
 
 print tits.value_counts(sort = True)
-
+<<
 
 ####Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
