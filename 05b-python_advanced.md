@@ -49,70 +49,69 @@ print deg.value_counts(sort = True)
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
-import pandas as pd
-import re
+>> import pandas as pd
+>> import re
 
-df = pd.read_csv("faculty.csv")
-
-
-#degr = df[" degree"]
-
-#deg=degr.replace('\.','',regex=True).astype("string")
+>> df = pd.read_csv("faculty.csv")
 
 
-#print deg.count(sort)
-#print deg.value_counts(sort = True)
+>> #degr = df[" degree"]
 
-#Titles
-tits = df[' title']
+>> #deg=degr.replace('\.','',regex=True).astype("string")
 
-print tits.value_counts(sort = True)
+
+>> #print deg.count(sort)
+>> #print deg.value_counts(sort = True)
+
+>> #Titles
+>> tits = df[' title']
+
+>> print tits.value_counts(sort = True)
 
 
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
->>
-import pandas as pd
-import re
+>> import pandas as pd
+>> import re
 
-df = pd.read_csv("faculty.csv")
-
-
-#degr = df[" degree"]
-
-#deg=degr.replace('\.','',regex=True).astype("string")
+>> df = pd.read_csv("faculty.csv")
 
 
-#print deg.count(sort)
-#print deg.value_counts(sort = True)
+>> #degr = df[" degree"]
 
-#Titles
-tits = df[' email']
+>> #deg=degr.replace('\.','',regex=True).astype("string")
 
-print tits.value_counts(sort = True)
-<<
+
+>> #print deg.count(sort)
+>> #print deg.value_counts(sort = True)
+
+>> #Titles
+>> tits = df[' email']
+
+>> print tits.value_counts(sort = True)
+
 
 ####Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
-import pandas as pd
-import re
+>> import pandas as pd
+>> import re
 
-df = pd.read_csv("faculty.csv")
-emailz = list(df[" email"])
+>> df = pd.read_csv("faculty.csv")
+>> emailz = list(df[" email"])
 
-dom = emailz
-
-
-print dom
+>> dom = emailz
 
 
+>> print dom
 
 
-domain = re.search("@[\w.]+", emailz)
-#print domain.group(" email")
-print emailz.value_counts(sort = True)
 
-Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
+
+>> domain = re.search("@[\w.]+", emailz)
+>> #print domain.group(" email")
+>> print emailz.value_counts(sort = True)
+
+>> Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
 ---
 
@@ -131,30 +130,30 @@ warren@upenn.edu
 bryanma@upenn.edu
 ```
 
-import pandas as pd
-import re
+>> import pandas as pd
+>> import re
 
 
-df = pd.read_csv("faculty.csv")
+>> df = pd.read_csv("faculty.csv")
 
-s = df
-snail = df[" email"]
-#print snail[0]
+>> s = df
+>> snail = df[" email"]
+>> #print snail[0]
 
 
 
-snail_d = re.search("@[\w.]+", snail[0])
+>> snail_d = re.search("@[\w.]+", snail[0])
 
-#snail_d.group()
-print snail 
-#domain = re.search("@*", "snail")
-#print df
-#domain = re.search('@', df, 1)
-#print df[" email"]
-#snail = df[" email"]
+>> #snail_d.group()
+>> print snail 
+>> #domain = re.search("@*", "snail")
+>> #print df
+>> #domain = re.search('@', df, 1)
+>> #print df[" email"]
+>> #snail = df[" email"]
 
-#print snail_d
-print snail_d.group(0)
+>> #print snail_d
+>> print snail_d.group(0)
 
 
 
