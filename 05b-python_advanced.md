@@ -142,32 +142,36 @@ warren@upenn.edu
 bryanma@upenn.edu
 ```
 
->> import pandas as pd
->> import re
+import pandas as pd
+
+import re
 
 
->> df = pd.read_csv("faculty.csv")
+df = pd.read_csv("faculty.csv")
 
->> s = df
->> snail = df[" email"]
->> #print snail[0]
+s = df
 
+snail = df[" email"]
 
-
->> snail_d = re.search("@[\w.]+", snail[0])
-
->> #snail_d.group()
->> print snail 
->> #domain = re.search("@*", "snail")
->> #print df
->> #domain = re.search('@', df, 1)
->> #print df[" email"]
->> #snail = df[" email"]
-
->> #print snail_d
->> print snail_d.group(0)
+print snail[0]
 
 
+
+snail_d = re.search("@[\w.]+", snail[0])
+
+snail_d.group()
+
+print snail
+
+domain = re.search("@*", "snail")
+
+print df
+domain = re.search('@', df, 1)
+print df[" email"]
+snail = df[" email"]
+
+print snail_d
+print snail_d.group(0)
 
 
 ---
