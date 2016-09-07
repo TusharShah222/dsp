@@ -15,10 +15,9 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 --- 
 
 ###Part I - Regular Expressions  
-
-
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
+---
 import pandas as pd
 import re
 
@@ -28,7 +27,8 @@ degr = df[" degree"]
 
 deg=degr.replace('\.','',regex=True).astype("string")
 
-"""
+---
+***Comments Below***
 
 dfz=degr.replace('\*','',regex=True).astype(float)
 
@@ -36,80 +36,92 @@ breakout = deg.groupby('a').count()
 
 Nodecimals = degr[' degree'].replace(regex=True,inplace=True,to_replace=r'\D',value=r'')
 
-"""
-
-"""
-
 print deg.count(sort)
 
-"""
 print deg.value_counts(sort = True)
 
 
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
->> import pandas as pd
->> import re
+---
 
->> df = pd.read_csv("faculty.csv")
+import pandas as pd
+import re
+df = pd.read_csv("faculty.csv")
 
+degr = df[" degree"]
 
->> #degr = df[" degree"]
+deg=degr.replace('\.','',regex=True).astype("string")
 
->> #deg=degr.replace('\.','',regex=True).astype("string")
+***Comments***
 
+print deg.count(sort)
+print deg.value_counts(sort = True)
+Titles
 
->> #print deg.count(sort)
->> #print deg.value_counts(sort = True)
+tits = df[' title']
 
->> #Titles
->> tits = df[' title']
+print tits.value_counts(sort = True)
 
->> print tits.value_counts(sort = True)
-
+---
 
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
->> import pandas as pd
->> import re
 
->> df = pd.read_csv("faculty.csv")
+---
+
+import pandas as pd
+
+import re
+
+df = pd.read_csv("faculty.csv")
+
+degr = df[" degree"]
+
+deg=degr.replace('\.','',regex=True).astype("string")
+
+print deg.count(sort)
+
+print deg.value_counts(sort = True)
+
+Titles
+
+tits = df[' email']
+
+print tits.value_counts(sort = True)
 
 
->> #degr = df[" degree"]
-
->> #deg=degr.replace('\.','',regex=True).astype("string")
-
-
->> #print deg.count(sort)
->> #print deg.value_counts(sort = True)
-
->> #Titles
->> tits = df[' email']
-
->> print tits.value_counts(sort = True)
+---
 
 
 ####Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
->> import pandas as pd
->> import re
 
->> df = pd.read_csv("faculty.csv")
->> emailz = list(df[" email"])
+---
 
->> dom = emailz
+import pandas as pd
+import re
+
+df = pd.read_csv("faculty.csv")
+
+emailz = list(df[" email"])
+
+dom = emailz
+
+print dom
+
+domain = re.search("@[\w.]+", emailz)
+
+print domain.group(" email")
+
+print emailz.value_counts(sort = True)
 
 
->> print dom
+>> Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
+---
 
-
-
->> domain = re.search("@[\w.]+", emailz)
->> #print domain.group(" email")
->> print emailz.value_counts(sort = True)
 
 >> Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
